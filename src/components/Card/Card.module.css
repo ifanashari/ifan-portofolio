@@ -1,55 +1,29 @@
 .card {
-    /* @apply gap-9; */
-    width: 700px;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto
+  @apply md:grid xl:grid-cols-3 grid-cols-5 items-center;
+  width: calc(100% - 100px);
+  height: 100vh;
+  position: relative;
 }
 
 .card img {
-    width: 400px;
-    height: 250px;
-    object-fit: cover;
-    transition: .5s;
-}
-
-.card:hover img {
-    /* transform: scale(1.1) */
+  @apply xl:col-span-2 col-span-3;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card_content {
-    @apply p-6;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: space-between;
+  @apply lg:px-20 md:px-12 max-md:p-12 xl:col-span-1 col-span-2;
 }
 
-.buttonVisit {
-    @apply
-    inline-block
-    rounded
-    bg-neutral-800
-    px-6
-    pb-2
-    pt-2.5
-    text-xs
-    font-medium
-    uppercase
-    leading-normal
-    text-neutral-50
-    transition
-    duration-150
-    ease-in-out
-    hover:bg-neutral-700
-    focus:bg-neutral-700
-    focus:outline-none
-    focus:ring-0
-    active:bg-neutral-900
-    motion-reduce:transition-none
-    dark:shadow-black/30
+@media (max-width: 768px) {
+  .card img {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    width: calc(100% - 50px);
+  }
 }
